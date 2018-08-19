@@ -168,6 +168,9 @@
 		01FBC3831C1EADDF00837F04 /* MGSStringColumnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FBC3821C1EADDF00837F04 /* MGSStringColumnTests.m */; };
 		01FBC7EC1B0679520008EAF8 /* MGSMutableSubstring.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FBC7EA1B0679520008EAF8 /* MGSMutableSubstring.m */; };
 		01FC487F1C1C7EC600F4227E /* Fragaria.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB69B62B118B745700903D1D /* Fragaria.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2A34185C2129CA3100A9B6E0 /* SMLSyntaxColouringProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A34185B2129C8EC00A9B6E0 /* SMLSyntaxColouringProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A34185F2129CCC600A9B6E0 /* MGSSyntaxDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 013278661A81614500D2DCA5 /* MGSSyntaxDefinition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A3418602129D25500A9B6E0 /* SMLLayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AB69B678118B76E700903D1D /* SMLLayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB257FCE129B1BF500A3FF76 /* SMLTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = AB69B666118B768000903D1D /* SMLTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB257FE0129B1CE300A3FF76 /* MGSSyntaxController.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3971C8118C1F8A00AEF388 /* MGSSyntaxController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB3971CB118C1F8A00AEF388 /* MGSSyntaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3971C9118C1F8A00AEF388 /* MGSSyntaxController.m */; };
@@ -621,6 +624,7 @@
 		256AC3D90F4B6AC300CF3369 /* FragariaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FragariaAppDelegate.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2A34185B2129C8EC00A9B6E0 /* SMLSyntaxColouringProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMLSyntaxColouringProtocol.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Fragaria-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fragaria-Info.plist"; sourceTree = "<group>"; };
 		AB3971C8118C1F8A00AEF388 /* MGSSyntaxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSSyntaxController.h; sourceTree = "<group>"; };
 		AB3971C9118C1F8A00AEF388 /* MGSSyntaxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSSyntaxController.m; sourceTree = "<group>"; };
@@ -1159,6 +1163,7 @@
 				D0C146731A871A0B00DDE90A /* MGSFragariaView.h */,
 				D040AAC61AC27D98009931EE /* MGSFragariaViewPrivate.h */,
 				D0C146741A871A0B00DDE90A /* MGSFragariaView.m */,
+				2A34185B2129C8EC00A9B6E0 /* SMLSyntaxColouringProtocol.h */,
 				AB83887D171E94C5004408F4 /* Miscellaneous */,
 				D0E521021A90BAC1005CB80B /* Syntax Error Components */,
 				01BB1BEC1A7962C7006C0056 /* Text View Components */,
@@ -1347,6 +1352,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A3418602129D25500A9B6E0 /* SMLLayoutManager.h in Headers */,
+				2A34185F2129CCC600A9B6E0 /* MGSSyntaxDefinition.h in Headers */,
+				2A34185C2129CA3100A9B6E0 /* SMLSyntaxColouringProtocol.h in Headers */,
 				D0718B491AB54EA70073493A /* MGSPrefsColourPropertiesViewController.h in Headers */,
 				D0718B441AB54E8C0073493A /* MGSPrefsEditorPropertiesViewController.h in Headers */,
 				01F336901C8C962100B5F395 /* NSSet+Fragaria.h in Headers */,

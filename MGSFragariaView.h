@@ -17,6 +17,7 @@
 @protocol MGSBreakpointDelegate;
 @protocol MGSFragariaTextViewDelegate;
 @protocol MGSDragOperationDelegate;
+@protocol SMLSyntaxColouringProtocol;
 
 
 /**
@@ -159,6 +160,8 @@
  *  colour scheme.
  *  @param scheme The colour scheme. */
 - (void)setColoursFromScheme:(nonnull MGSColourScheme *)scheme;
+
+@property (nonatomic, nullable) id<SMLSyntaxColouringProtocol> syntaxColouring;
 
 
 #pragma mark - Configuring Autocompletion

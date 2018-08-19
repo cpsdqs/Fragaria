@@ -86,6 +86,8 @@ static unichar ClosingBraceForOpeningBrace(unichar c)
     NSTimer *autocompleteWordsTimer;
     NSArray *cachedKeywords;
     id __weak syntaxDefOfCachedKeywords;
+
+    id<SMLSyntaxColouringProtocol> _syntaxColouring;
 }
 
 
@@ -250,6 +252,16 @@ static unichar ClosingBraceForOpeningBrace(unichar c)
 - (void)setRichText:(BOOL)richText
 {
     [super setRichText:NO];
+}
+
+- (void)setSyntaxColouring:(id<SMLSyntaxColouringProtocol>)syntaxColouring
+{
+    _syntaxColouring = syntaxColouring;
+    [_syntaxColouring setLayoutManager:self.layoutManager];
+    [super setNeedsDisplayInRect:self.frame];
+}
+- (id<SMLSyntaxColouringProtocol>)syntaxColouring {
+    return _syntaxColouring;
 }
 
 

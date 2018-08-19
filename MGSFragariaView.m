@@ -89,6 +89,10 @@
 /*
  * @property syntaxColouring
  */
+- (void)setSyntaxColouring:(id<SMLSyntaxColouringProtocol>)syntaxColouring
+{
+    self.textView.syntaxColouring = syntaxColouring;
+}
 - (SMLSyntaxColouring *)syntaxColouring
 {
 	return self.textView.syntaxColouring;

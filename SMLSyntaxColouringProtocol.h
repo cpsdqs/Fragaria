@@ -1,15 +1,22 @@
+//
+//  SMLSyntaxColouringProtocol.h
+//  Fragaria
+//
+//  Created by cpsdqs on 2018-08-19.
+//
+
 /*
- 
+
  MGSFragaria
  Written by Jonathan Mitchell, jonathan@mugginsoft.com
  Find the latest version at https://github.com/mugginsoft/Fragaria
- 
+
  Smultron version 3.6b1, 2009-09-12
  Written by Peter Borg, pgw3@mac.com
  Find the latest version at http://smultron.sourceforge.net
 
-Copyright 2004-2009 Peter Borg
- 
+ Copyright 2004-2009 Peter Borg
+
  Licensed under the Apache License, Version 2.0 (the "License"); you may not use
  this file except in compliance with the License. You may obtain a copy of the
  License at
@@ -20,11 +27,9 @@ Copyright 2004-2009 Peter Borg
  under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
  CONDITIONS OF ANY KIND, either express or implied. See the License for the
  specific language governing permissions and limitations under the License.
-*/
-/// @cond PRIVATE
+ */
 
 #import <Cocoa/Cocoa.h>
-#import "SMLSyntaxColouringProtocol.h"
 
 
 @class SMLLayoutManager;
@@ -39,7 +44,7 @@ Copyright 2004-2009 Peter Borg
 /**
  *  Performs syntax colouring on the text editor document.
  **/
-@interface SMLSyntaxColouring : NSObject<SMLSyntaxColouringProtocol>
+@protocol SMLSyntaxColouringProtocol <NSObject>
 
 
 /// @name Properties - Internal
@@ -92,10 +97,7 @@ Copyright 2004-2009 Peter Borg
 
 /// @name Instance Methods
 
-
-/** Initialize a new instance using the specified layout manager.
- * @param lm The layout manager associated with this instance. */
-- (id)initWithLayoutManager:(NSLayoutManager *)lm;
+- (void)setLayoutManager:(SMLLayoutManager *)manager;
 
 /** Inform this syntax colourer that its layout manager's text storage
  *  will change.

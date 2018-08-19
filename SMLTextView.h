@@ -23,6 +23,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MGSFragariaTextViewDelegate.h"
+#import "SMLSyntaxColouringProtocol.h"
 
 
 @class MGSFragariaView;
@@ -246,5 +247,6 @@
 /** Indicates the current insertion point color. */
 @property (nonatomic, assign) NSColor *insertionPointColor;
 
+@property (nonatomic) id<SMLSyntaxColouringProtocol> syntaxColouring;
 
 @end

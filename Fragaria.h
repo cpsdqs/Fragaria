@@ -14,6 +14,10 @@
 #import "SMLAutoCompleteDelegate.h"   
 #import "SMLSyntaxDefinition.h"
 
+#import "SMLSyntaxColouringProtocol.h"
+#import "MGSSyntaxDefinition.h"
+#import "SMLLayoutManager.h"
+
 #import "MGSFragariaView.h"
 #import "MGSFragariaView+Definitions.h"
 #import "SMLSyntaxError.h"

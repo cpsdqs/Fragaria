@@ -18,7 +18,7 @@
 
 
 /** Fragaria's syntax colouring object. */
-@property  (nonatomic, assign, readonly) SMLSyntaxColouring *syntaxColouring;
+// @property  (nonatomic, assign, readonly) SMLSyntaxColouring *syntaxColouring;
 
 /** Fragaria's gutter view. */
 @property (nonatomic, strong, readonly) MGSLineNumberView *gutterView;
