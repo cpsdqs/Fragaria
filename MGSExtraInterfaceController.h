@@ -37,8 +37,8 @@
 	IBOutlet NSTextField *spacesTextFieldEntabWindow;
 	IBOutlet NSTextField *spacesTextFieldDetabWindow;
 	IBOutlet NSTextField *lineTextFieldGoToLineWindow;
-	IBOutlet NSWindow *entabWindow;
-	IBOutlet NSWindow *detabWindow;
+    IBOutlet NSWindow *entabWindow;
+    IBOutlet NSWindow *detabWindow;
 	IBOutlet NSWindow *goToLineWindow;
 }
 
@@ -61,8 +61,7 @@
 - (IBAction)cancelButtonEntabDetabGoToLineWindowsAction:(id)sender;
 
 
-/// @name Accessing the user interface
-
+/// @name Accessing the user
 
 /** A context menu for use by SMLTextView. */
 @property (nonatomic) IBOutlet NSMenu *contextMenu;

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <development version="5100" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.13.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MGSExtraInterfaceController">
@@ -71,7 +71,7 @@ Gw
                                 <decimal key="maximum" value="1000000"/>
                             </numberFormatter>
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -82,6 +82,7 @@ Gw
                     <constraint firstAttribute="trailing" secondItem="12" secondAttribute="trailing" constant="20" id="E0K-zG-vuK"/>
                     <constraint firstItem="14" firstAttribute="baseline" secondItem="15" secondAttribute="baseline" id="K40-Ab-NC1"/>
                     <constraint firstItem="11" firstAttribute="leading" secondItem="8" secondAttribute="leading" constant="20" id="Mjl-X9-w4t"/>
+                    <constraint firstItem="15" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8" secondAttribute="leading" priority="250" constant="20" symbolic="YES" id="N67-tX-E1a"/>
                     <constraint firstItem="11" firstAttribute="baseline" secondItem="12" secondAttribute="baseline" id="Nj1-ap-nVv"/>
                     <constraint firstAttribute="bottom" secondItem="15" secondAttribute="bottom" constant="20" symbolic="YES" id="PBj-jj-i6N"/>
                     <constraint firstItem="14" firstAttribute="leading" secondItem="15" secondAttribute="trailing" constant="12" symbolic="YES" id="cc7-Nx-KTh"/>

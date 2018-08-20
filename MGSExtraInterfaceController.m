@@ -29,14 +29,6 @@
 }
 
 
-- (NSMenu*)contextMenu
-{
-    if (!_contextMenu)
-        [NSBundle loadNibNamed:@"MGSContextMenu" owner:self];
-    return _contextMenu;
-}
-
-
 #pragma mark -
 #pragma mark Tabbing
 
@@ -48,14 +40,14 @@
 {
     NSWindow *wnd;
     
-	if (entabWindow == nil) {
-		[NSBundle loadNibNamed:@"SMLEntab.nib" owner:self];
+//    if (entabWindow == nil) {
+//        [NSBundle loadNibNamed:@"SMLEntab.nib" owner:self];
         spacesTextFieldEntabWindow.integerValue = target.tabWidth;
-	}
-	
+//    }
+
     _completionTarget = target;
     wnd = [_completionTarget window];
-	[NSApp beginSheet:entabWindow modalForWindow:wnd modalDelegate:self didEndSelector:nil contextInfo:nil];
+    [NSApp beginSheet:entabWindow modalForWindow:wnd modalDelegate:self didEndSelector:nil contextInfo:nil];
 }
 
 
@@ -66,11 +58,11 @@
 {
     NSWindow *wnd;
     
-	if (detabWindow == nil) {
-		[NSBundle loadNibNamed:@"SMLDetab.nib" owner:self];
+//    if (detabWindow == nil) {
+//        [NSBundle loadNibNamed:@"SMLDetab.nib" owner:self];
         spacesTextFieldDetabWindow.integerValue = target.tabWidth;
-	}
-	
+//    }
+
     _completionTarget = target;
     wnd = [_completionTarget window];
 	[NSApp beginSheet:detabWindow modalForWindow:wnd modalDelegate:self didEndSelector:nil contextInfo:nil];
@@ -132,10 +124,10 @@
     _completionTarget = target;
     NSWindow *wnd = [_completionTarget window];
     
-	if (goToLineWindow == nil) {
-		[NSBundle loadNibNamed:@"SMLGoToLine.nib" owner:self];
-	}
-	
+//    if (goToLineWindow == nil) {
+//        [NSBundle loadNibNamed:@"SMLGoToLine.nib" owner:self];
+//    }
+
 	[NSApp beginSheet:goToLineWindow modalForWindow:wnd modalDelegate:self didEndSelector:nil contextInfo:nil];
 }
 

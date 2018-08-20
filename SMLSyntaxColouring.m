@@ -498,6 +498,11 @@ static char kcColoursChanged;
     return effectiveRange;
 }
 
+- (void)setLayoutManager:(SMLLayoutManager *)manager {
+    [NSException raise:@"NotImplemented" format:@"[SMLSyntaxColouring setLayoutManager:] not implemented"];
+}
+
+
 
 #pragma mark - Coloring passes
 

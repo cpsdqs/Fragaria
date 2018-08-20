@@ -870,7 +870,6 @@ static unichar ClosingBraceForOpeningBrace(unichar c)
     }
 }
 
-
 /*
  * - realColumnOfCharacter:
  */
@@ -888,6 +887,37 @@ static unichar ClosingBraceForOpeningBrace(unichar c)
 
 #pragma mark - Text handling
 
+- (void)deleteBackward:(id)sender {
+    NSRange selected = [self selectedRange];
+    if (selected.length == 0 && self.indentWithSpaces) {
+        NSString *completeString = [self string];
+        NSRange lineRange = [completeString lineRangeForRange:selected];
+        NSString *line = [completeString substringWithRange:lineRange];
+        NSUInteger selInLine = selected.location - lineRange.location;
+
+        BOOL isAllSpaces = true;
+
+        for (NSUInteger i = 0; i < selInLine; i++) {
+            if ([line characterAtIndex:i] != ' ') {
+                isAllSpaces = false;
+                break;
+            }
+        }
+
+        if (isAllSpaces && selInLine > 0) {
+            NSInteger spaceCount = selInLine % self.tabWidth;
+            if (spaceCount == 0) {
+                spaceCount = self.tabWidth;
+            }
+            for (NSInteger i = 0; i < spaceCount; i++) {
+                [super deleteBackward:sender];
+            }
+            return;
+        }
+    }
+
+    [super deleteBackward:sender];
+}
 
 /*
  * - insertText:
@@ -905,7 +935,21 @@ static unichar ClosingBraceForOpeningBrace(unichar c)
         [self shiftBackToLastOpenBrace];
     }
 
-    [super insertText:input];
+    NSInteger nextCharIndex = NSMaxRange([self selectedRange]);
+    NSString *completeString = [self string];
+    unichar nextChar = 0;
+    if (nextCharIndex < (NSInteger) [completeString length]) {
+        nextChar = [completeString characterAtIndex:nextCharIndex];
+    }
+
+    if (
+        ([aString isEqualToString:@")"] && self.insertClosingParenthesisAutomatically && nextChar == ')') ||
+        ([aString isEqualToString:@"}"] && self.insertClosingBraceAutomatically && nextChar == '}')
+    ) {
+        [self setSelectedRange:NSMakeRange(nextCharIndex + 1, 0)];
+    } else {
+        [super insertText:input];
+    }
 
     if ([aString isEqualToString:@"("] && self.insertClosingParenthesisAutomatically) {
         [self insertStringAfterInsertionPoint:@")"];
@@ -1066,6 +1110,12 @@ static unichar ClosingBraceForOpeningBrace(unichar c)
  */
 - (void)insertNewline:(id)sender
 {
+    NSInteger nextCharIndex = NSMaxRange([self selectedRange]);
+    unichar nextChar = 0;
+    if (nextCharIndex < (NSInteger) [[self string] length]) {
+        nextChar = [[self string] characterAtIndex:nextCharIndex];
+    }
+
     [super insertNewline:sender];
 
     // If we should indent automatically, check the previous line and scan all the whitespace at the beginning of the line into a string and insert that string into the new line
@@ -1087,6 +1137,13 @@ static unichar ClosingBraceForOpeningBrace(unichar c)
                 }
                 if ([lastLineString characterAtIndex:idx] == '{') {
                     [self insertTab:nil];
+
+                    if (nextChar == '}') {
+                        NSRange selection = [self selectedRange];
+                        [super insertNewline:nil];
+                        [self shiftBackToLastOpenBrace];
+                        [self setSelectedRange:selection];
+                    }
                 }
                 break;
             }
